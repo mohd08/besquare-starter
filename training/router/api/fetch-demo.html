@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Fetching Stuff</h1>
+    <p id="result"></p>
+
+    <script>
+      const getResult = async () => {
+        const result = await fetch(
+          "https://api.coindesk.com/v1/bpi/currentprice.json"
+        );
+        const resultJson = await result.json();
+
+        console.log(resultJson);
+      };
+
+      console.log(getResult());
+
+      //   fetch("https://api.coindesk.com/v1/bpi/currentprice.json")
+      //     .then((data) => {
+      //       return data.json();
+      //     })
+      //     .then((dataJson) => {
+      //       document.getElementById("result").innerText =
+      //         "BTC: $" + dataJson.bpi.USD.rate;
+      //       console.log(dataJson);
+      //     });
+
+      console.log("yayy we got the result!");
+    </script>
+  </body>
+</html>
